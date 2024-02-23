@@ -32,7 +32,7 @@ export default function Homepage()
             <div className="  mt-16 ">
                 <Mentors/>
             </div>
-            <div className="mt-16 border-black border-2 h-60 bg-gradient-to-tr from-white via-blue-50 to-blue-200">
+            <div className="mt-16  h-60 bg-gradient-to-tr from-white via-blue-50 to-blue-200">
                 <Quote/>
             </div>
             <div className="mt-28">

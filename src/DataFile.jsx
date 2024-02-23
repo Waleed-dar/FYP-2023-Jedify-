@@ -93,7 +93,7 @@ export const SideItemsData=[
     key: 'University Admins',
     p1:'University admins can hire lecturers from the platform.',
     p2:'University admins can post on forums.',
-    p3:' '
+    p3:' University admins can rate the course '
   } 
 ]
 export const Mentorsdata=[

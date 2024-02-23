@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "./Images/logo.png";
-import Temp1 from "./Temp1";
+import Temp1 from "./Loading";
 
 const Navbar = () => {
   return (
@@ -26,7 +26,7 @@ const Navbar = () => {
               <Link to="/temp1">Courses</Link>
             </li>
             <li  className="hover:text-blue-700">
-                <Link to="/temp1">Contact Us</Link>
+                <Link to="/ContactUs">Contact Us</Link>
             </li>
             <li  className="hover:text-blue-700">
                <Link to="/temp1"> FAQS</Link>

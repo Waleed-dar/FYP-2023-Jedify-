@@ -32,10 +32,10 @@ const Navbar = () => {
                <Link to="/temp1"> FAQS</Link>
             </li>
             <li  className="hover:text-blue-700">
-                <Link to="/temp1"> Sign in </Link>
+                <Link to="/SignIn"> Sign in </Link>
             </li>
             <li className="mb-5 ">
-            <Link to="/temp1"><button className="bg-blue-700 pb-1  hover:bg-blue-500 mr-2 rounded-md sm:h-8 sm:px-1 text-white sm:text-sm">Create free account</button>
+            <Link to="/SelectMode"><button className="bg-blue-700 pb-1  hover:bg-blue-500 mr-2 rounded-md sm:h-8 sm:px-1 text-white sm:text-sm">Create free account</button>
             </Link>
             </li>
           </ul>

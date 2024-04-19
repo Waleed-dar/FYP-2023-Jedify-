@@ -1,10 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer"
 import map from "./Images/map.png"
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 export default function ContactUs() {
+  const [Name,setName] = useState('');
+  const [Email,setEmail] =useState('');
+  const [Feedback,setFeedback]=useState('');
+
+   const handleName = (event)  =>{
+         setName(event.target.value);
+   }
+   const handleEmail = (event)  =>{
+    setEmail(event.target.value);
+}
+const handleFeedback = (event)  =>{
+  setFeedback(event.target.value);
+}
+const handleSubmit = (event) => {
+
+  axios.post('http://localhost:3000/ContactUsData', { Name, Email, Feedback })
+    .then((response) => {
+      alert("Message sent successfully!",response);
+    })
+    .catch((error) => {
+      console.error('Failed to send message:', error);
+      alert("Failed to send message. Please try again later.");
+    });
+}
+  
   return (
     <div className="">
       <Navbar />
@@ -14,7 +40,7 @@ export default function ContactUs() {
           CONTACT US
         </div>
         <div className="flex">
-          <form className="max-w-sm mx-auto mt-8">
+          <form className="max-w-sm mx-auto mt-8" onSubmit={handleSubmit}>
             <div className="font-semibold"> Leave Us a Message</div>
             <div className="mb-4 mt-3">
               <label className="block mb-2 text-sm font-bold" htmlFor="name">
@@ -25,7 +51,7 @@ export default function ContactUs() {
                 id="name"
                 type="text"
                 placeholder="XYZ"
-              />
+               onChange={handleName} value={Name}/>
             </div>
             <div className="mb-4">
               <label className="block mb-2 text-sm font-bold" htmlFor="email">
@@ -36,7 +62,8 @@ export default function ContactUs() {
                 id="email"
                 type="email"
                 placeholder="XYZ@example.com"
-              />
+               onChange={handleEmail} value={Email}
+               />
             </div>
             <div className="mb-6">
               <label className="block mb-2 text-sm font-bold" htmlFor="feedback">
@@ -45,7 +72,7 @@ export default function ContactUs() {
               <textarea
                 className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                 id="feedback"
-                placeholder="Your feedback..."
+                placeholder="Your feedback..."  onChange={handleFeedback} value={Feedback}
               ></textarea>
             </div>
             <div className="flex items-center justify-between">

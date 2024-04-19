@@ -1,26 +1,28 @@
 import React from "react";
 import Lottie from "lottie-react";
 import Hand from "./Images/Hand.json";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { useContext } from "react";
+import { UserDataContext } from "./App";
+import { AuthContext } from "./App";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar2() {
   const [searchQuery, setSearchQuery] = useState("");
+  const { authentication, setAuthentication } = useContext(AuthContext);
+  const { userInfo, setUserInfo } = useContext(UserDataContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Handle search functionality here
     console.log("Searching for:", searchQuery);
   };
-
   return (
     <div className="">
       <div className="flex lg:justify-between">
-
-        <h2 className="text-blue-700 mt-12 text-lg ">Welcome,XYZ</h2>
+        <h2 className="text-blue-700 mt-12 text-lg ">Welcome,{userInfo}..</h2>
         <Lottie className="h-10 w-10 mt-9  " animationData={Hand}></Lottie>
-
 
         <form
           onSubmit={handleSubmit}
@@ -53,7 +55,18 @@ export default function Navbar2() {
           </Link>
 
           <Link to="">
-            <li>Sign Out</li>
+            <li>
+              {" "}
+              <div
+                onClick={() => {
+                  setAuthentication(false);
+                  localStorage.clear();
+                  console.log("Here false on click", authentication);
+                }}
+              >
+                Sign Out
+              </div>
+            </li>
           </Link>
           <a href="https://roadmap.sh/">
             <li>Road Map</li>

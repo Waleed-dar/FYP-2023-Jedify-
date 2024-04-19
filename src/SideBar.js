@@ -5,8 +5,8 @@ import { FaRegRectangleList } from "react-icons/fa6";
 import { RiInboxArchiveFill } from "react-icons/ri";
 import { FaSitemap } from "react-icons/fa6";
 import { IoIosTime } from "react-icons/io";
-
 export default function SideBar()
+
 {
     return(
         <div className=" ">

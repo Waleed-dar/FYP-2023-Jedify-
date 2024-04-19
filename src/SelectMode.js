@@ -21,7 +21,7 @@ export default function SelectMode() {
             <button className="bg-blue-500 hover:bg-blue-600 text-white  font-bold py-1 px-3 rounded-lg w-full focus:outline-none focus:shadow-outline" 
             onClick={()=>{
                 setRole(SideItems.Students)
-                navigate("/SignIn")
+                navigate("/SignUp")
             }}>
                      < PiStudentBold className="h-10 w-10 inline " /> Student
             </button>
@@ -30,7 +30,7 @@ export default function SelectMode() {
             <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-3 rounded-lg w-full focus:outline-none focus:shadow-outline"
             onClick={()=>{
                 setRole(SideItems.Teacher)
-                navigate("/SignIn")
+                navigate("SignUp")
             }}>
             <GiTeacher className="h-10 w-10 inline " /> Teacher
             </button>
@@ -39,7 +39,7 @@ export default function SelectMode() {
             <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-0 rounded-lg w-full focus:outline-none focus:shadow-outline"
             onClick={()=>{
                 setRole(SideItems.Tech)
-                navigate("/SignIn")
+                navigate("SignUp")
             }}
             >
             <MdOutlinePersonAddAlt className="h-10 w-10 inline " />Tech HR
@@ -49,7 +49,7 @@ export default function SelectMode() {
             <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-0 rounded-lg w-full focus:outline-none focus:shadow-outline"
             onClick={()=>{
                 setRole(SideItems.University)
-                navigate("/SignIn")
+                navigate("SignUp")
             }}>
             <FaUniversity className="h-8 w-8 inline " /> University HR
             </button>

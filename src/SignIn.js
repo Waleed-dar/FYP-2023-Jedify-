@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import Dashboard from "./Dashboard";
+import Studentdashboard from "./StudentDashboard";
 import Lottie from "lottie-react";
 import Login1 from "./Images/login2.json";
 import login2 from "./Images/Login1.json";
@@ -12,13 +12,22 @@ export default function SignIn() {
   const [userPassword, setUserPassword] = useState(null);
   const { authentication, setAuthentication } = useContext(AuthContext);
   const { userInfo, setUserInfo } = useContext(UserDataContext);
+  const [selectedRole, setSelectedRole] = useState(null);
+
+  const handleRoleChange = (event) => {
+    setSelectedRole(event.target.value);
+  };
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (authentication) {
-      navigate("/Dashboard");
+    if (authentication && selectedRole == "student") {
+      navigate("/studentDashboard");
     }
+    else if(authentication && selectedRole == "teacher" ) {
+      navigate("/teacherDashboard")
+    }
+
   }, [authentication]);
 
   const login = () => {
@@ -71,6 +80,56 @@ export default function SignIn() {
               onChange={(e) => setUserPassword(e.target.value)}
             />
           </div>
+            <h2>Select Your Role</h2>
+      <div style={{ display: "flex", gap: "20px" }}>
+        <div>
+          <input
+            type="radio"
+            id="teacher"
+            name="role"
+            value="teacher"
+            checked={selectedRole === "teacher"}
+            onChange={handleRoleChange}
+          />
+          <label htmlFor="teacher">Teacher</label>
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            id="student"
+            name="role"
+            value="student"
+            checked={selectedRole === "student"}
+            onChange={handleRoleChange}
+          />
+          <label htmlFor="student">Student</label>
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            id="hr"
+            name="role"
+            value="hr"
+            checked={selectedRole === "hr"}
+            onChange={handleRoleChange}
+          />
+          <label htmlFor="hr">HR</label>
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            id="university-hr"
+            name="role"
+            value="university-hr"
+            checked={selectedRole === "university-hr"}
+            onChange={handleRoleChange}
+          />
+          <label htmlFor="university-hr">University HR</label>
+        </div>
+      </div>
           <div className="flex items-center justify-between mb-4">
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"

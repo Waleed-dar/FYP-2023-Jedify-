@@ -45,7 +45,7 @@ export default function Navbar2() {
           </button>
         </form>
 
-        <ul className="flex font-semibold text-xs lg:text-sm space-x-1 sm:ml-2 md:space-x-4 md:ml-2 mt-12 lg:ml-12 lg:space-x-10 xl:ml-12 xl:space-x-14">
+        <ul className="flex font-semibold text-xs lg:text-sm space-x-1 sm:ml-2 md:space-x-4 md:ml-2 mt-12 lg:ml-12 lg:space-x-10  xl:space-x-14">
           <Link to="">
             <li>Home </li>
           </Link>
@@ -71,7 +71,7 @@ export default function Navbar2() {
           <a href="https://roadmap.sh/">
             <li>Road Map</li>
           </a>
-          <div className="rounded-full border-black border-2">Image</div>
+          <div className="rounded-full border-black border-2">Im</div>
         </ul>
       </div>
     </div>

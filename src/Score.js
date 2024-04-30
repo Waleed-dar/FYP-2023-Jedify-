@@ -10,7 +10,6 @@ export default function Score() {
                 <span className="sm:text-xl lg:text-2xl font-bold xl:text-3xl 2xl:text-4xl ml-3">{Score1.value}<br/></span>
                 <span className="text-xs font-semibold">{Score1.label} </span> 
               </div>
-              {/*<div className="w-0.5 h-9 bg- bg-gray-400 mt-6"></div> */} 
             </div>
             ))
             }

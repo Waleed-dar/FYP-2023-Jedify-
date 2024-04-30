@@ -5,9 +5,11 @@ import Homepage from "./Homepage.js";
 import Temp1 from "./Loading.js";
 import ContactUs from "./ContactUs.js";
 import SignIn from "./SignIn.js";
-import Dashboard from "./Dashboard.js";
+import StudentDashboard from "./StudentDashboard.js";
+import TeacherDashboard from "./TeacherDashboard.js";
 import SelectMode from "./SelectMode.js";
 import SignUp from "./SignUp.js";
+import UploadCourse from "./UploadCourse.js";
 
 export default function Routing() {
   return (
@@ -17,10 +19,11 @@ export default function Routing() {
         <Route path="/temp1" element={<Temp1 />} />
         <Route path="/ContactUs" element={<ContactUs />} />
         <Route path="/SignIn" element={<SignIn />} />
-        <Route path="/Dashboard" element={<Dashboard />} />
+        <Route path="/studentdashboard" element={<StudentDashboard/>} />
+        <Route path="/teacherDashboard" element={<TeacherDashboard/>}/>
+        <Route path="/teacherDashboard/UploadCourse" element={<UploadCourse/>}/>
         <Route path="/SelectMode" element={<SelectMode />} />
-        <Route path="/SignUp" element={<SignUp/>}/>
-        {/* Add more Route components for other pages as needed */}
+        <Route path="/SelectMode/SignUp" element={<SignUp/>}/>
       </Routes>
     </BrowserRouter>
   );

@@ -8,7 +8,7 @@ import Table from "./Table";
 import Mentors from "./Mentors";
 import Footer from "./Footer";
 import Quote from "./Quote";
-import Dashboard from "./Dashboard";
+import Dashboard from "./StudentDashboard";
 
 export default function Homepage() {
   return (

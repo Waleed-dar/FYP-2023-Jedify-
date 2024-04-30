@@ -1,21 +1,18 @@
-import React, { useContext,useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import SideBar from "./SideBar";
 import Navbar2 from "./NavBar2";
-import DashboardBody from "./DashboardBody";
 import { AuthContext } from "./App";
 import { useNavigate } from "react-router-dom";
-export default function Dashboard() {
+import Calen from "./Calendar";
 
-  const { authentication} = useContext(AuthContext);
-  const navigate=useNavigate();
+export default function Dashboard() {
+  const { authentication } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!authentication) {
       navigate("/SignIn");
-    }
-    else{
-      navigate("/Dashboard");
-    }
+    } 
   }, [authentication]);
   return (
     <div className="flex">
@@ -29,7 +26,10 @@ export default function Dashboard() {
 
         <div className="flex-grow p-4">
           <div className="p-4 text-lg font-semibold">
-            <DashboardBody />
+            <div className="">
+              Recently Accessed Courses
+              <Calen />
+            </div>
           </div>
         </div>
       </div>

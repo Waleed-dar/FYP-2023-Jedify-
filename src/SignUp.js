@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Sanimation from "./Images/SignupAnimation.json"
 import Lottie from "lottie-react";
 import Navbar from "./Navbar";
+import { useNavigate } from "react-router-dom";
 
 export default function SignUp() {
     const [formData, setFormData] = useState({
@@ -13,6 +14,7 @@ export default function SignUp() {
         userName: '',
         password: ''
     });
+    const navigate=useNavigate();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -21,8 +23,8 @@ export default function SignUp() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle form submission here
         console.log(formData);
+        navigate("/SignIn")
     };
 
     return (

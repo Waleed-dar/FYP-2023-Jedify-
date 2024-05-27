@@ -68,10 +68,10 @@ export default function Navbar2() {
               </div>
             </li>
           </Link>
-          <a href="https://roadmap.sh/">
+          <Link to="/Roadmap">
             <li>Road Map</li>
-          </a>
-          <div className="rounded-full border-black border-2">Im</div>
+          </Link>
+          <div className="rounded-full border-black border-2">Image</div>
         </ul>
       </div>
     </div>

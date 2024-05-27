@@ -126,3 +126,23 @@ export const Mentorsdata=[
     image: m4
 }
 ]
+export const courses = {
+  frontend: "Frontend Development",
+  backend: "Backend Development",
+  devOps: "DevOps Engineering",
+  fullStack: "Full Stack Development",
+  aiAndDataScientist: "AI and Data Science",
+  dataAnalyst: "Data Analysis",
+  new: "New Technologies",
+  android: "Android Development",
+  postgreSQL: "PostgreSQL Database Management",
+  blockchain: "Blockchain Development",
+  qa: "Quality Assurance",
+  softwareArchitect: "Software Architecture",
+  cyberSecurity: "Cyber Security",
+  uxDesign: "User Experience Design",
+  gameDeveloper: "Game Development",
+  technicalWriter: "Technical Writing",
+  mlOps: "MLOps",
+  createYourOwnRoadmap: "Create Your Own Roadmap"
+};

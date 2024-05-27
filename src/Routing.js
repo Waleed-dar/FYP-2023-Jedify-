@@ -10,12 +10,15 @@ import TeacherDashboard from "./TeacherDashboard.js";
 import SelectMode from "./SelectMode.js";
 import SignUp from "./SignUp.js";
 import UploadCourse from "./UploadCourse.js";
+import AboutUs from "./AboutUs.js";
+import Roadmap from "./Roadmap.js";
 
 export default function Routing() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Homepage />} />
+        <Route path="/AboutUs" element={<AboutUs/>} />
         <Route path="/temp1" element={<Temp1 />} />
         <Route path="/ContactUs" element={<ContactUs />} />
         <Route path="/SignIn" element={<SignIn />} />
@@ -24,6 +27,7 @@ export default function Routing() {
         <Route path="/teacherDashboard/UploadCourse" element={<UploadCourse/>}/>
         <Route path="/SelectMode" element={<SelectMode />} />
         <Route path="/SelectMode/SignUp" element={<SignUp/>}/>
+        <Route path="/Roadmap" element={<Roadmap/>} />
       </Routes>
     </BrowserRouter>
   );

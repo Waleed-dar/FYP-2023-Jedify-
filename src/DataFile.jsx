@@ -6,6 +6,7 @@ import m1 from './Images/m1.jpeg'
 import m2 from './Images/m2.jpeg'
 import m3 from './Images/m3.jpeg'
 import m4 from './Images/m4.jpeg'
+import { useState } from 'react'
 
 export const Score1=[
     {
@@ -146,3 +147,4 @@ export const courses = {
   mlOps: "MLOps",
   createYourOwnRoadmap: "Create Your Own Roadmap"
 };
+

@@ -21,11 +21,18 @@ export default function SignIn() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const storedAuth = localStorage.getItem('authToken');
     if (authentication && selectedRole == "student") {
       navigate("/studentDashboard");
     }
     else if(authentication && selectedRole == "teacher" ) {
       navigate("/teacherDashboard")
+    }
+    else if (authentication && selectedRole == "hr"){
+      navigate("/TechHr")
+    }
+    else if(authentication && selectedRole == "university-hr"){
+      navigate("/Uadmin")
     }
 
   }, [authentication]);
@@ -33,6 +40,7 @@ export default function SignIn() {
   const login = () => {
     if (userPassword === "1234") {
       setUserInfo(userInput);
+      localStorage.setItem('authToken', 'True');
       setAuthentication(true);
       console.log(userInfo);
     } else {
@@ -47,7 +55,7 @@ export default function SignIn() {
           <Lottie className="h-72 w-72" animationData={Login1}></Lottie>
         </div>
       </div>
-      <h1 className=" mt-4 font-semibold text-xl text-center">Welcome Back!</h1>
+      <h1 className=" mt-4 text-blue-800 font-semibold text-xl text-center">Welcome Back!</h1>
       <div className="flex flex-col items-center pt-5 h-screen bg-gray-100">
         <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-lg">
           <div className="mb-4">

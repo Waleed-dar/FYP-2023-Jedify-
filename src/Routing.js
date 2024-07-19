@@ -12,6 +12,11 @@ import SignUp from "./SignUp.js";
 import UploadCourse from "./UploadCourse.js";
 import AboutUs from "./AboutUs.js";
 import Roadmap from "./Roadmap.js";
+import ManageProfile from "./ManageProfile.js";
+import TechHr from "./TechHr.js";
+import Uadmin from "./Uadmin.js";
+import Subscribe from "./Subscribe.js";
+import ThankYouPage from "./ThankYou.js";
 
 export default function Routing() {
   return (
@@ -28,6 +33,11 @@ export default function Routing() {
         <Route path="/SelectMode" element={<SelectMode />} />
         <Route path="/SelectMode/SignUp" element={<SignUp/>}/>
         <Route path="/Roadmap" element={<Roadmap/>} />
+        <Route path="/ManageProfile" element={<ManageProfile/>}/>
+        <Route path="/TechHr" element={<TechHr/>}/>
+        <Route path="/Uadmin" element={<Uadmin/>}/>
+        <Route path="/Subscribe" element={<Subscribe/>}/>
+        <Route path="/Subscribe/ThankYou" element={<ThankYouPage/>}/>
       </Routes>
     </BrowserRouter>
   );

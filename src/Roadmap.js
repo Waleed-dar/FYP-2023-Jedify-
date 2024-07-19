@@ -36,7 +36,7 @@ export default function RoadmapViewer() {
 
   return (
     <div className="flex">
-      <div className="w-40 h-screen bg-gray-50">
+      <div className="w-52 h-screen bg-gray-50">
         <SideBar />
       </div>
       <div className="flex flex-col w-full">

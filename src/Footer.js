@@ -12,9 +12,9 @@ export default function footer() {
               <h4 className="font-semibold text-gray-400">Company</h4>
               <ul className="list-none mt-2">
                 <li>
-                  <a href="#" className="hover:text-gray-300 mt-1">
+                  <Link to="/AboutUs" className="hover:text-gray-300 mt-1">
                     About Us
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="#" className="hover:text-gray-300 mt-1">
@@ -78,7 +78,7 @@ export default function footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/temp1" className="hover:text-gray-300 mt-1">
+                <Link to="/ContactUs" className="hover:text-gray-300 mt-1">
                   Contact
                 </Link>
               </li>

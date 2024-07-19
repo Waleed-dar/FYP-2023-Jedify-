@@ -8,7 +8,7 @@ export default function Recomendation() {
     <div className="">
       <div className="ml-2">
         <Link
-          to="/temp1"
+          to="/SignIn"
           className="flex sm:text-xs md:text-sm pl-3 mt-4  text-blue-600 hover:text-blue-400"
         >
           Explore more programs

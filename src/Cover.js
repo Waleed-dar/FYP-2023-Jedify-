@@ -13,8 +13,8 @@ export default function Cover()
             <h1 className="mt-1 xl:mt-2"><span className="text-blue-700">Career </span>Path </h1>
             <p className="text-gray-600  lg:pt-3 font-thin sm:text-xs xl:text-sm">The latest online learning and material that will help your knowledge area growing </p>
             <div className="pt-2">
-            <Link to="/temp1"> <button className="bg-blue-700 pb-1 font-semibold hover:bg-blue-500 mr-2 rounded-lg sm:h-9 sm: w-28 sm:px-1 text-white sm:text-sm">Get Started</button> </Link> 
-            <Link to="/temp1"><button className="bg-gray-300 pb-1  hover:bg-blue-400 mr-2 rounded-md sm:h-8 sm:w-28 sm:px-1 text-blue-700 sm:text-sm">Get Free Trail</button> </Link>
+            <Link to="/SelectMode"> <button className="bg-blue-700 pb-1 font-semibold hover:bg-blue-500 mr-2 rounded-lg sm:h-9 sm: w-28 sm:px-1 text-white sm:text-sm">Get Started</button> </Link> 
+            <Link to="/SelectMode"><button className="bg-gray-300 pb-1  hover:bg-blue-400 mr-2 rounded-md sm:h-8 sm:w-28 sm:px-1 text-blue-700 sm:text-sm">Get Free Trail</button> </Link>
         </div>
         </div>
         </div>

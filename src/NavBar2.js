@@ -1,41 +1,45 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import Lottie from "lottie-react";
 import Hand from "./Images/Hand.json";
-import { useState, useEffect } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
-import { Link, Navigate } from "react-router-dom";
-import { useContext } from "react";
-import { UserDataContext } from "./App";
-import { AuthContext } from "./App";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { UserDataContext, AuthContext } from "./App";
+import { ProfileImage } from './ManageProfile';
 
 export default function Navbar2() {
   const [searchQuery, setSearchQuery] = useState("");
   const { authentication, setAuthentication } = useContext(AuthContext);
-  const { userInfo, setUserInfo } = useContext(UserDataContext);
+  const { userInfo } = useContext(UserDataContext);
+  const [profileImage, setProfileImage] = useState(ProfileImage[0]);
+  const navigate = useNavigate();
+
+  const handleImageUpload = (newImage) => {
+    setProfileImage(newImage); // Update the local state with the new image
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Searching for:", searchQuery);
   };
+
   return (
-    <div className="">
-      <div className="flex lg:justify-between">
-        <h2 className="text-blue-700 mt-12 text-lg ">Welcome,{userInfo}..</h2>
-        <Lottie className="h-10 w-10 mt-9  " animationData={Hand}></Lottie>
+    <nav className="bg-white border-b-2 border-gray-300 p-4 shadow-md">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center space-x-4">
+          <Lottie className="h-10 w-10" animationData={Hand} />
+          <h2 className="text-blue-700 text-lg">Welcome, {userInfo}..</h2>
+        </div>
 
         <form
           onSubmit={handleSubmit}
-          className=" mt-9 flex justify-center items-center bg-white rounded-md shadow-sm"
+          className="flex items-center bg-gray-200 rounded-md shadow-sm"
         >
           <input
             type="text"
             placeholder="Search..."
             value={searchQuery}
-            onChange={(e) => {
-              setSearchQuery(e.target.value);
-            }}
-            className="px-4 py-2 focus:outline-none w-24 sm:w-full rounded-l-md"
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="px-4 py-2 focus:outline-none rounded-l-md"
           />
           <button
             type="submit"
@@ -45,35 +49,42 @@ export default function Navbar2() {
           </button>
         </form>
 
-        <ul className="flex font-semibold text-xs lg:text-sm space-x-1 sm:ml-2 md:space-x-4 md:ml-2 mt-12 lg:ml-12 lg:space-x-10  xl:space-x-14">
-          <Link to="">
-            <li>Home </li>
+        <ul className="flex items-center space-x-6">
+          <Link to="/" className="text-blue-600 hover:text-blue-800">
+            Home
           </Link>
-
-          <Link to="">
-            <li className="text-blue-600">My Courses </li>
+          <Link to="/my-courses" className="text-blue-600 hover:text-blue-800">
+            My Courses
           </Link>
-
-          <Link to="">
-            <li>
-              {" "}
-              <div
-                onClick={() => {
-                  setAuthentication(false);
-                  localStorage.clear();
-                  console.log("Here false on click", authentication);
-                }}
-              >
-                Sign Out
-              </div>
-            </li>
+          <Link to="/roadmap" className="text-blue-600 hover:text-blue-800">
+            Road Map
           </Link>
-          <Link to="/Roadmap">
-            <li>Road Map</li>
+          <div
+            onClick={() => {
+              setAuthentication(false);
+              localStorage.clear();
+              console.log("Signed out", authentication);
+              navigate("/SignIn");
+            }}
+            className="text-blue-600 cursor-pointer hover:text-blue-800"
+          >
+            Sign Out
+          </div>
+          <Link to="/ManageProfile">
+            <div className="rounded-full border-2 border-black h-12 w-12 overflow-hidden">
+              {profileImage ? (
+                <img
+                  src={profileImage}
+                  alt="Profile"
+                  className="h-full w-full object-cover"
+                />
+              ) : (
+                <span className="text-gray-500">No Image</span>
+              )}
+            </div>
           </Link>
-          <div className="rounded-full border-black border-2">Image</div>
         </ul>
       </div>
-    </div>
+    </nav>
   );
 }
